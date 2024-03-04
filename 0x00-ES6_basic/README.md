@@ -1,3 +1,1 @@
-# Short Specializations
-
-  ## Backend engineering
+# ES6 Basics
