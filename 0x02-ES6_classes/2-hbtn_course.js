@@ -1,8 +1,8 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this._validateString(name, 'Name');
-    this._length = this._validateNumber(length, 'Length');
-    this._students = this._validateArray(students, 'Students');
+    this._name = this._validateString(name, 'name');
+    this._length = this._validateNumber(length, 'length');
+    this._students = this._validateArray(students, 'students');
   }
 
   // Getter and Setter for name
@@ -11,7 +11,7 @@ export default class HolbertonCourse {
   }
 
   set name(value) {
-    this._name = this._validateString(value, 'Name');
+    this._name = this._validateString(value, 'name');
   }
 
   // Getter and Setter for length
@@ -20,7 +20,7 @@ export default class HolbertonCourse {
   }
 
   set length(value) {
-    this._length = this._validateNumber(value, 'Length');
+    this._length = this._validateNumber(value, 'length');
   }
 
   // Getter and Setter for students
@@ -29,7 +29,7 @@ export default class HolbertonCourse {
   }
 
   set students(value) {
-    this._students = this._validateArray(value, 'Students');
+    this._students = this._validateArray(value, 'students');
   }
 
   // Helper function for validating string
