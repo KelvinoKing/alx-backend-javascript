@@ -1,17 +1,19 @@
+/**
+ * Joins a set of strings with a dash after stripping the string
+ * */
 export default function cleanSet(set, startString) {
-  let result = '';
-
-  set.forEach((value) => {
-    if (value.startsWith(startString)) {
-      const cleanedValue = value.slice(startString.length);
-      result += `${cleanedValue}-`;
-    }
-  });
-
-  // Remove the trailing '-' if there are values in the result string
-  if (result.length > 0) {
-    result = result.slice(0, -1);
+  const parts = [];
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
+    return '';
   }
+  for (const value of set.values()) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      const valueSubStr = value.substring(startString.length);
 
-  return result;
+      if (valueSubStr && valueSubStr !== value) {
+        parts.push(valueSubStr);
+      }
+    }
+  }
+  return parts.join('-');
 }
