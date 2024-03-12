@@ -1,7 +1,7 @@
 export default function getListStudentIds(myArray) {
   let newArray = [];
 
-  if (myArray.constructor !== Array) {
+  if (!Array.isArray(myArray)) {
     return newArray;
   }
 
