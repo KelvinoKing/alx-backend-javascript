@@ -3,12 +3,15 @@
 // HTTP server should listen on port 1245
 // Displays Hello Holberton School! in the page body for any endpoint as plain text
 
-const { createServer } = require('node:http');
+const http = require('http');
 
 const port = 1245;
 const hostname = '127.0.0.1';
+const app = http.createServer();
 
-const app = createServer((req, res) => {
+app.on('request', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
   res.end('Hello Holberton School!');
 });
 
