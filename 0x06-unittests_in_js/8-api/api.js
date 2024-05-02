@@ -9,10 +9,12 @@ const app = express();
 const port = 7865;
 const host = 'localhost';
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
 });
 
-module.exports = app.listen(port, () => {
+app.listen(port, () => {
   console.log(`API available on ${host} port ${port}`);
 });
+
+module.exports = app;
