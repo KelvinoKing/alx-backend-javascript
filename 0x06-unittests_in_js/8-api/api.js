@@ -4,17 +4,16 @@
 // For the route GET /, return the message Welcome to the payment system
 
 const express = require('express');
-const app = express();
 
-const port = 7865;
-const host = 'localhost';
+const app = express();
+const PORT = 7865;
 
 app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
 });
 
-app.listen(port, () => {
-  console.log(`API available on ${host} port ${port}`);
+app.listen(PORT, () => {
+  console.log(`API available on localhost port ${PORT}`);
 });
 
 module.exports = app;
